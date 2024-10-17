@@ -1,0 +1,16 @@
+# Copy this file to /etc/systemd/system/datalayer-s3-sync.service
+
+[Unit]
+Description=Data Sync for Chia Datalayer to S3
+
+[Service]
+# Change this value to the path to the sync script
+ExecStart=/usr/local/bin/datalayer-s3-sync
+
+# The User and Group need to be the same user
+# that the Chia software runs as
+User=zachary
+Group=zachary
+
+[Install]
+WantedBy=multi-user.target
